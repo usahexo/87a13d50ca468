@@ -1,0 +1,13 @@
+<aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <% if (is_post()) { %>
+        <%- partial('post/nav', {post: page}) %>
+    <% } %>
+    <div class="widgets-container">
+        <% if (theme.widgets) { %>
+            <% theme.widgets.forEach(function(widget) { %>
+                <%- partial('widget/' + widget, {post: page}) %>
+            <% }) %>
+        <% } %>
+    </div>
+</aside>
